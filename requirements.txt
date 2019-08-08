@@ -1,0 +1,6 @@
+Flask==1.1.1
+Flask-CouchDB==0.2.1
+connexion==2.3.0
+CouchDB==1.2
+injector==0.17.0
+Flask-Injector==0.12.0

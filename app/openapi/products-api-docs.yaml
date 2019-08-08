@@ -1,0 +1,49 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Products API
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:5000/v1.0/
+paths:
+  /api/products/:
+    get:
+      summary: List all products
+      tags:
+        - products
+      responses:
+        '200':
+          description: list of products
+        default:
+          description: unexpected error
+
+    post:
+      summary: Create a product
+      tags:
+        - products
+      responses:
+        '201':
+          description: Null response
+        default:
+          description: unexpected error
+
+
+  /api/products/{productId}:
+    get:
+      summary: Info for a specific product
+      tags:
+        - products
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: The id of the product to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+        default:
+          description: unexpected error
+
